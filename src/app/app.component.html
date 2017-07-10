@@ -1,9 +1,10 @@
 <div style="text-align:center" class="title">
   <h1>{{minha_uf.nome}}</h1>
 </div>
-<p>ID: {{minha_uf.id}}</p>
-<p>Área: {{minha_uf.area}}</p>
-<p>Média municípios atendidos: {{media}}</p>
+<p align="center">ID: {{minha_uf.id}}</p>
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Flag-map_of_Tocantins_%28Brazil%29.png" width="100px"></p>
+<p>Área do estado: {{minha_uf.area}}</p>
+<p>Média de  municípios atendidos: {{media}}</p>
 <ul>
   <li *ngFor="let mun of municipios_atendidos">
     Ano: {{mun.ano}} Quantidade: {{mun.valor}}
