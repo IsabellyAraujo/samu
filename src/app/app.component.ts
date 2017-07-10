@@ -16,6 +16,10 @@ export class AppComponent implements OnInit {
     title = 'app';
     ufs : UF[];
     dados_da_samu : Dados[];
+    minha_uf: UF;
+    municipios_atendidos: Dados[] = [];
+    meu_id = 17;
+    media: number;
 
     constructor(private ufService: UFService, private samuService: SamuService)
     {
@@ -25,11 +29,25 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.ufs = this.ufService.getAll();
         this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
-        this.defineTitle();
+        this.minha_uf = this.defineTitle();
+        this.media = this.calcularMunicipios();
     }
-    defineTitle(): void{
+
+    defineTitle(): UF{
       for(let uf of this.ufs){
-        if(uf.id == 17) this.title = uf.nome;
+        if(uf.id == 17) return uf;
     }
 }
+    calcularMunicipios(): number {
+      var qnt = 0;
+      var total = 0;
+      for(let mun of this.dados_da_samu){
+        if(mun.uf_id == this.meu_id){
+          qnt++;
+          total+=mun.valor;
+          this.municipios_atendidos.push(mun);
+        }
+      }
+      return Math.round(total/qnt);
+    }
 }
