@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import {UF} from './types/uf';
 import {UFService} from './services/uf.service'
 
@@ -27,7 +26,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.ufs = this.ufService.getAll();
+      //erro
+        this.ufs = this.ufService.getPorID(17);
         this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
         this.minha_uf = this.defineTitle();
         this.media = this.calcularMunicipios();
