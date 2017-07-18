@@ -1,0 +1,11 @@
+<div style="text-align:center" class="title">
+  <h2>Todos os Dados: {{minha_UF.nome}}</h2>
+</div>
+<p>ID: {{minha_UF.id}} </p>
+<p>Área: {{minha_UF.area}} </p>
+<p>Municipios atendidos - média: {{media}} </p>
+<ul>
+  <li *ngFor = "let mun of municipios_atendidos">
+      Ano: {{mun.ano}} Quantidade: {{mun.valor}}
+  </li>
+</ul>

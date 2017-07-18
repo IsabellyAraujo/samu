@@ -12,6 +12,6 @@ export class UFService {
   getPorID(id: number){
     for(let uf of UFs){
       if(uf.id == id) return uf;
-    }
+}
   }
 }
