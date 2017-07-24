@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
 import { UF } from '../types/uf';
 import { Dados } from '../types/samu';
-import { VALORES } from './mock-samu_municipios_atendidos_por_estado';
+//import { VALORES } from './mock-samu_municipios_atendidos_por_estado';
+import { Http } from '@angular/http'
 
 @Injectable()
+
+export class SamuService {
+  private MunicipiosUrl = 'http://api.pgi.gov.br/api/1/serie/27.json';  // URL to web api
+  getAllMunicipiosAtendidosPorEstado(http: Http): Dados[] {
+  return this.http.get(this.MunicipiosUrl)
+
+}
+
+}
+
+/*@Injectable()
 export class SamuService {
   getAllMunicipiosAtendidosPorEstado(): Dados[] {
     return VALORES;
@@ -16,4 +28,6 @@ export class SamuService {
       }
     return total;
     }
+
 }
+*/
