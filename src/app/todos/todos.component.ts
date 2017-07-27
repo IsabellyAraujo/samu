@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
 import {UF} from '../types/uf';
 import {UFService} from '../services/uf.service'
-
 import {Dados} from '../types/samu';
-import {SamuService} from '../services/samu.service'
+import {SamuService} from '../services/samu.service';
+import {DadoNome} from '../types/allDados';
+import {MetodoTodos} from '../services/metodo_Todos.service'
 
 @Component({
   selector: 'app-root',
@@ -17,8 +17,10 @@ export class todosComponent implements OnInit {
   minha_UF : UF;
   municipios_atendidos: Dados[] = [];
   media : number;
+  samu : Dados[];
+  dados: DadoNome[];
 
-    constructor(private ufService: UFService, private samuService: SamuService)
+    constructor(private ufService: UFService, private samuService: SamuService, private metodoTodos: MetodoTodos)
     { }
 
 
@@ -27,6 +29,7 @@ export class todosComponent implements OnInit {
         this.minha_UF = this.ufService.getPorID(17);
         this.municipios_atendidos = this.samuService.getPorUFMunicipiosAtendidosPorEstado(this.minha_UF);
         this.media = this.calcularMedia();
+        this.dados = this.metodoTodos.unirDados();
     }
 
       calcularMedia(): number{

@@ -7,7 +7,8 @@ import { RouterModule }   from '@angular/router';
 import { dados_UFComponent } from './dados_UF/dados.component';
 import { ResumoComponent } from './resumo/resumo.component';
 import { todosComponent } from './todos/todos.component';
-import { HttpModule }    from '@angular/http';
+import { MetodoTodos } from './services/metodo_Todos.service'
+//import { HttpModule }    from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { HttpModule }    from '@angular/http';
 }
     ])
 ],
-  providers: [SamuService, UFService],
+  providers: [SamuService, UFService, MetodoTodos],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
