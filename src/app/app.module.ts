@@ -9,11 +9,17 @@ import { ResumoComponent } from './resumo/resumo.component';
 import { todosComponent } from './todos/todos.component';
 import { MetodoTodos } from './services/metodo_Todos.service'
 //import { HttpModule }    from '@angular/http';
+
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ResumoComponent,
     todosComponent,
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     dados_UFComponent
   ],
   imports: [
@@ -27,13 +33,17 @@ import { MetodoTodos } from './services/metodo_Todos.service'
     path: 'dadosUF',
     component: dados_UFComponent
   },
+  /*{
+    path: 'app',
+    component: AppComponent
+  },*/
 {
   path: 'todos',
   component: todosComponent
 }
     ])
 ],
-  providers: [SamuService, UFService, MetodoTodos],
+  providers: [SamuService, UFService, MetodoTodos, AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
