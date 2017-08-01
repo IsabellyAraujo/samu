@@ -25,7 +25,7 @@ Os códigos (id) da Unidades Federativas (UF), segundo o IBGE, variam entre 11 e
 - id: 14, aluno: Clara Alice Bandeira de Moura
 - id: 15, aluno: Danilo Miranda de Medeiros Galvão
 - id: 16, aluno: Gabriel Cardoso Melita
-- id: 17, aluno: Isabelly Thayse Araujo Alves
+- id: 17, aluno: Isabelly Thayse Araujo Alves - https://samufinished.herokuapp.com/
 - id: 21, aluno: João Mendes Lopes Neto
 - id: 22, aluno: Jonathan Cardoso Ferreira de Moura
 - id: 23, aluno: Jorge Enrique de Azevedo Tinoco
