@@ -3,6 +3,8 @@ import {UF} from '../types/uf';
 import {UFService} from '../services/uf.service'
 import {Dados} from '../types/samu';
 import {SamuService} from '../services/samu.service';
+import {DadoNome} from '../types/allDados';
+import {MetodoTodos} from '../services/metodo_Todos.service'
 
 @Component({
   selector: 'app-root',
@@ -14,10 +16,10 @@ export class dados_UFComponent implements OnInit {
   ufs : UF[];
   dados_da_samu : Dados[];
   minha_UF : UF;
-  municipios_atendidos: Dados[] = [];
+  municipios_atendidos: Dados[];
   media : number;
-
-    constructor(private ufService: UFService, private samuService: SamuService)
+  dados: DadoNome[];
+    constructor(private ufService: UFService, private samuService: SamuService, private metodoTodos: MetodoTodos)
     { }
 
 
@@ -28,6 +30,7 @@ export class dados_UFComponent implements OnInit {
         this.media = this.calcularMedia();
     }
 
+
       calcularMedia(): number{
         var qtd = 0;
         var total = 0;
@@ -35,9 +38,8 @@ export class dados_UFComponent implements OnInit {
           if(mun.uf_id == 17){
             qtd++;
             total += mun.valor;
-
       }
-      return Math.round(total/qtd);
+        return Math.round(total/qtd);
     }
   }
 }

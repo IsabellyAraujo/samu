@@ -1,5 +1,6 @@
 <div style="text-align:center" class="title">
   <h1>{{minha_UF.nome}}</h1>
 </div>
-<p>ID: {{minha_UF.id}} </p>
-<p>Área: {{minha_UF.area}} </p>
+<p>Municípios Atendidos no {{minha_UF.nome}}</p>
+<p *ngFor="let dado of municipios_atendidos">Quantidade:{{dado.valor}}, Ano:{{dado.ano}}</p>
+<!-- <p>Área: {{minha_UF.area}} </p>!-->
