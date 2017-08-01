@@ -19,11 +19,11 @@ import { MetodoTodos } from './services/metodo_Todos.service'
     AppComponent,
     ResumoComponent,
     todosComponent,
-    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     dados_UFComponent
   ],
   imports: [
     BrowserModule,
+      //InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true),
     RouterModule.forRoot([
     {
     path: 'resumo',
@@ -33,17 +33,13 @@ import { MetodoTodos } from './services/metodo_Todos.service'
     path: 'dadosUF',
     component: dados_UFComponent
   },
-  /*{
-    path: 'app',
-    component: AppComponent
-  },*/
 {
   path: 'todos',
   component: todosComponent
 }
     ])
 ],
-  providers: [SamuService, UFService, MetodoTodos, AppComponent],
+  providers: [SamuService, UFService, MetodoTodos],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
